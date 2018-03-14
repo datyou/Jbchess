@@ -1,14 +1,7 @@
 #! ruby -Ku
 #将棋の対戦と通信対戦実装までやりたい
 
-
-field = Array.new(9){Array.new(9)}
-#盤の初期化
-for i in 0..8
-    for j in 0..8
-    field[i][j] = "□"
-    end
-end
+field = Array.new(9){Array.new(9,"□")}
 
 #盤の表示
 def print_field(array)
@@ -20,8 +13,7 @@ def print_field(array)
     end
 end
 
-
-#駒の表示
+#駒のクラス
 class Piece
     #駒の定数
     def initialize(status, line, column)
@@ -31,7 +23,8 @@ class Piece
     end
     attr_accessor :status, :line, :column
     #駒の移動
-    def move
+    def move(line, column, status)
+
     end
     #駒の表示
     def display(array)
@@ -39,7 +32,7 @@ class Piece
     end
 end
 
-
+#駒オブジェクトの生成と表示
 firstpawn1 = Piece.new("歩","1","3")
 firstpawn2 = Piece.new("歩","2","3")
 firstpawn3 = Piece.new("歩","3","3")
@@ -60,6 +53,9 @@ firstlance1 = Piece.new("香","1","1")
 firstlance2 = Piece.new("香","9","1")
 firstrook = Piece.new("飛","8","2")
 firstbishiop = Piece.new("角","2","2")
+
+
+
 
 firstpawn1.display(field)
 firstpawn2.display(field)
@@ -124,4 +120,8 @@ secondlance2.display(field)
 secondrook.display(field)
 secondbishiop.display(field)
 
+
 print_field(field)
+
+
+#while str = gets
