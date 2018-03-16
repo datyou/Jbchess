@@ -1,18 +1,24 @@
 #! ruby -Ku
 #将棋の対戦と通信対戦実装までやりたい
 
-field = Array.new(9){Array.new(9,"□")}
 
-#盤の表示
-def print_field(array)
-    for i in 0..8
-        for j in 0..8
-        print array[i][8-j]
-        end
-        puts
+class Field
+    def initialize
+    @field = Array.new(9){Array.new(9,"□")}
     end
-end
+    attr_accessor :field
 
+    #盤の表示
+    def print_field(array)
+        for i in 0..8
+            for j in 0..8
+            print array[i][8-j]
+            end
+            puts
+        end
+    end
+
+end
 #駒のクラス
 class Piece
     #駒の定数
@@ -32,6 +38,7 @@ class Piece
     end
 end
 
+allField = Field.new
 #駒オブジェクトの生成と表示
 firstpawn1 = Piece.new("歩","1","3")
 firstpawn2 = Piece.new("歩","2","3")
@@ -57,27 +64,27 @@ firstbishiop = Piece.new("角","2","2")
 
 
 
-firstpawn1.display(field)
-firstpawn2.display(field)
-firstpawn3.display(field)
-firstpawn4.display(field)
-firstpawn5.display(field)
-firstpawn6.display(field)
-firstpawn7.display(field)
-firstpawn8.display(field)
-firstpawn9.display(field)
-firstking.display(field)
-firstgold1.display(field)
-firstgold2.display(field)
-firstsilver1.display(field)
-firstsilver2.display(field)
-firstknight1.display(field)
-firstknight2.display(field)
-firstlance1.display(field)
-firstlance2.display(field)
-firstrook.display(field)
-firstbishiop.display(field)
+firstpawn1.display(allField.field)
+firstpawn2.display(allField.field)
+firstpawn3.display(allField.field)
+firstpawn4.display(allField.field)
+firstpawn5.display(allField.field)
+firstpawn6.display(allField.field)
+firstpawn7.display(allField.field)
+firstpawn8.display(allField.field)
+firstpawn9.display(allField.field)
+firstking.display(allField.field)
+firstgold1.display(allField.field)
+firstgold2.display(allField.field)
+firstsilver1.display(allField.field)
+firstsilver2.display(allField.field)
+firstknight1.display(allField.field)
+firstknight2.display(allField.field)
+firstlance1.display(allField.field)
+firstlance2.display(allField.field)
+firstrook.display(allField.field)
 
+firstbishiop.display(allField.field)
 secondpawn1 = Piece.new("歩","1","7")
 secondpawn2 = Piece.new("歩","2","7")
 secondpawn3 = Piece.new("歩","3","7")
@@ -99,29 +106,29 @@ secondlance2 = Piece.new("香","9","9")
 secondrook = Piece.new("飛","2","8")
 secondbishiop = Piece.new("角","8","8")
 
-secondpawn1.display(field)
-secondpawn2.display(field)
-secondpawn3.display(field)
-secondpawn4.display(field)
-secondpawn5.display(field)
-secondpawn6.display(field)
-secondpawn7.display(field)
-secondpawn8.display(field)
-secondpawn9.display(field)
-secondking.display(field)
-secondgold1.display(field)
-secondgold2.display(field)
-secondsilver1.display(field)
-secondsilver2.display(field)
-secondknight1.display(field)
-secondknight2.display(field)
-secondlance1.display(field)
-secondlance2.display(field)
-secondrook.display(field)
-secondbishiop.display(field)
+secondpawn4.display(allField.field)
+secondpawn1.display(allField.field)
+secondpawn2.display(allField.field)
+secondpawn3.display(allField.field)
+secondpawn5.display(allField.field)
+secondpawn6.display(allField.field)
+secondpawn7.display(allField.field)
+secondpawn8.display(allField.field)
+secondpawn9.display(allField.field)
+secondking.display(allField.field)
+secondgold1.display(allField.field)
+secondgold2.display(allField.field)
+secondsilver1.display(allField.field)
+secondsilver2.display(allField.field)
+secondknight1.display(allField.field)
+secondknight2.display(allField.field)
+secondlance1.display(allField.field)
+secondlance2.display(allField.field)
+secondrook.display(allField.field)
+secondbishiop.display(allField.field)
 
 
-print_field(field)
+allField.print_field(allField.field)
 
 
 #while str = gets
